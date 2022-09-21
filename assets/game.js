@@ -50,7 +50,18 @@ const generateGame = () => {
         throw new Error("The dimension of the board must be an even number.")
     }
 
-    const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
+    const emojis = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '0'
+    ]
     const picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
     const items = shuffle([...picks, ...picks])
     const cards = `
@@ -58,7 +69,7 @@ const generateGame = () => {
             ${items.map(item => `
                 <div class="card">
                     <div class="card-front"></div>
-                    <div class="card-back">${item}</div>
+                    <div class="card-back"><img class="bat-image" src="assets/imgs/${item}.png" alt="${item}" width="50" height="50"></div>
                 </div>
             `).join('')}
        </div>
@@ -103,8 +114,10 @@ const flipCard = card => {
 
     if (state.flippedCards === 2) {
         const flippedCards = document.querySelectorAll('.flipped:not(.matched)')
-
-        if (flippedCards[0].innerText === flippedCards[1].innerText) {
+        var card_number0 = flippedCards[0].innerHTML;
+        var card_number1 = flippedCards[1].innerHTML;
+        var pos = card_number0.search('alt') + 5;
+        if (card_number0[pos] === card_number1[pos]) {
             flippedCards[0].classList.add('matched')
             flippedCards[1].classList.add('matched')
         }

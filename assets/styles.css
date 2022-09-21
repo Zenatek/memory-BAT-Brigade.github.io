@@ -6,7 +6,10 @@
 html {
     width: 100%;
     height: 100%;
-    background: linear-gradient(325deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%);
+    /* background: linear-gradient(325deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%); */
+    background-image: url('imgs/discordCover.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
     font-family: Fredoka;
 }
 
@@ -15,12 +18,16 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background:linear-gradient(134deg,  #7002f9 0%,#d79a1a 50%,#d1d0de 100%);
+    border-radius: 5px;
 }
 
 .controls {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
+    justify-content: space-between;
+    margin-top: 15px;
 }
 
 button {
@@ -32,6 +39,7 @@ button {
     cursor: pointer;
     font-family: Fredoka;
     font-size: 18pt;
+    margin-left: 10px;
 }
 
 .disabled {
@@ -41,6 +49,8 @@ button {
 .stats {
     color: #FFF;
     font-size: 14pt;
+    text-align: left;
+    margin-right: 10px;
 }
 
 .board-container {
@@ -51,7 +61,7 @@ button {
 .win {
     border-radius: 5px;
     box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
-    background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%);
+    background: linear-gradient(211deg,  #7002f9 0%,#ff2929 50%,#fcc700 100%);
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
@@ -128,4 +138,8 @@ button {
 
 .highlight {
     color: #6f00fc;
+}
+
+.bat-image{
+    margin-top: 25px;
 }
